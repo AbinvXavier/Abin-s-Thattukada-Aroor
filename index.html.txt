@@ -4,19 +4,24 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Abin's Thattukada Aroor - Kerala Authentic Cuisine</title>
+
+<!-- Google Fonts: Manjari for Kerala style -->
+<link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet" />
+
 <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fffaf0; /* Light coconut cream */
-    color: #4b3b1b; /* Dark brown */
-    margin: 0; padding: 0;
+    font-family: 'Manjari', serif;
+    background: #fffaf0; /* coconut cream */
+    color: #4b3b1b; /* dark brown */
+    margin: 0;
+    padding: 0;
   }
   header {
-    background: #d2691e; /* burnt orange */
+    background: linear-gradient(45deg, #d2691e, #ffcc66); /* burnt orange + turmeric yellow */
     color: #fffaf0;
     padding: 2rem;
     text-align: center;
-    font-family: 'Manjari', serif;
+    border-bottom: 5px solid #7a4a0a; /* deep brown border */
   }
   nav {
     background: #f5deb3; /* light wheat */
@@ -24,17 +29,17 @@
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
+    font-weight: bold;
   }
   nav a {
     color: #4b3b1b;
     text-decoration: none;
-    font-weight: bold;
   }
   nav a:hover {
     color: #d2691e;
   }
   .hero {
-    background-image: url('https://images.unsplash.com/photo-1556911073-52527ac437f5?auto=format&fit=crop&w=1350&q=80');
+    background-image: url('https://images.unsplash.com/photo-1541698444083-023c97d3f4b6?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -43,7 +48,7 @@
     align-items: center;
     color: #fffaf0;
     text-shadow: 1px 1px 6px #4b3b1b;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-family: 'Manjari', serif;
   }
   main {
@@ -52,11 +57,47 @@
     margin: 0 auto;
   }
   section {
+    border-left: 8px solid #3b5a0a; /* banana leaf green */
+    padding-left: 1rem;
     margin-bottom: 3rem;
   }
   h2 {
-    border-bottom: 2px solid #d2691e;
+    border-bottom: 3px solid #d2691e;
     padding-bottom: 0.5rem;
+  }
+  ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(75, 59, 27, 0.3);
+  }
+  form label {
+    font-weight: bold;
+  }
+  input, select, button {
+    font-family: 'Manjari', serif;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #7a4a0a;
   }
   footer {
     background: #d2691e;
@@ -89,6 +130,7 @@
   <section id="about">
     <h2>About Us</h2>
     <p>At Abin's Thattukada Aroor, we celebrate the rich heritage and vibrant flavors of Kerala. Our chefs use locally sourced ingredients and traditional cooking methods to create dishes that honor Kerala’s diverse culinary traditions—from the spice-laden Malabar coast to the lush backwaters. Step into our cozy space filled with Kerala decor and enjoy an authentic dining experience that feels like home.</p>
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Kerala traditional food" />
   </section>
 
   <section id="menu">
@@ -98,6 +140,7 @@
       <li><strong>Prawn Ularthiyathu</strong> — Spicy dry-fried prawns cooked with traditional Kerala spices</li>
       <li><strong>Banana Chips</strong> — Crispy thinly sliced banana chips fried in coconut oil</li>
     </ul>
+    <img src="https://images.unsplash.com/photo-1582461447036-062d8f1d9a4e?auto=format&fit=crop&w=900&q=80" alt="Banana chips" />
     <h3>Main Course</h3>
     <ul>
       <li><strong>Kerala Sadya</strong> — A grand vegetarian feast served on banana leaf, featuring an array of dishes</li>
@@ -109,6 +152,7 @@
       <li><strong>Ada Pradhaman</strong> — Classic Kerala payasam made with rice flakes and jaggery</li>
       <li><strong>Pazham Pori</strong> — Banana fritters, crispy and sweet</li>
     </ul>
+    <img src="https://images.unsplash.com/photo-1582071836869-8b7b81d0c6d9?auto=format&fit=crop&w=900&q=80" alt="Kerala dessert" />
     <h3>Beverages</h3>
     <ul>
       <li><strong>Tender Coconut Water</strong></li>
@@ -120,23 +164,27 @@
     <h2>Reservation</h2>
     <p>Please call us at <strong>[Phone Number]</strong> or fill out the reservation form below.</p>
     <form>
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" required /><br /><br />
-      <label for="date">Date:</label><br />
-      <input type="date" id="date" name="date" required /><br /><br />
-      <label for="time">Time:</label><br />
-      <input type="time" id="time" name="time" required /><br /><br />
-      <label for="guests">Number of Guests:</label><br />
-      <input type="number" id="guests" name="guests" min="1" max="20" required /><br /><br />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" max="20" required />
+
       <button type="submit">Book Now</button>
     </form>
   </section>
 
-  <section id="abinvaxavier@gmail.com">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Address:</strong> [Vallavanattu House Aroor Po]</p>
     <p><strong>Phone:</strong> [9495557549]</p>
-    <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p><strong>Email:</strong> <a href="mailto:abinvaxavier@gmail.com">abinvxavier@gmail.com</a></p>
     <p>Follow us on: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
   </section>
 </main>
